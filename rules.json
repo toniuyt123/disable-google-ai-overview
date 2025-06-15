@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "\\1://\\2.google.\\3/search?q=\\4+-ai&\\5"
+      }
+    },
+    "condition": {
+      "regexFilter": "^(https?)://([a-z.]+)\\.google\\.([a-z.]+)/search\\?q=(.*[^i]|.*a[^i]|.*-a[^i]|.*[^a]i|.*[^-]ai)&(.*)",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 2,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "\\1://\\2.google.\\3/search?q=\\4+-ai"
+      }
+    },
+    "condition": {
+      "regexFilter": "^(https?)://([a-z.]+)\\.google\\.([a-z.]+)/search\\?q=(.*[^i]|.*a[^i]|.*-a[^i]|.*[^a]i|.*[^-]ai)$",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
